@@ -1,25 +1,21 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 
-// https://astro.build/config
 export default defineConfig({
 	integrations: [
 		starlight({
-			title: 'My Docs',
+			title: 'Why Grief Matters',
 			social: {
-				github: 'https://github.com/withastro/starlight',
+				github: 'https://github.com/grief-matters',
 			},
 			sidebar: [
 				{
-					label: 'Guides',
-					items: [
-						// Each item here is one entry in the navigation menu.
-						{ label: 'Example Guide', link: '/guides/example/' },
-					],
+					label: 'Content Editing',
+					autogenerate: { directory: 'content-editing' },
 				},
 				{
-					label: 'Reference',
-					autogenerate: { directory: 'reference' },
+					label: 'Development',
+					autogenerate: { directory: 'development' },
 				},
 			],
 		}),
