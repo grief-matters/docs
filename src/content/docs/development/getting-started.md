@@ -21,7 +21,9 @@ Once you're all set up with an account, follow these steps to get started:
 5. Run `npm run dev` at the root of the project folder. This will build the studio application and start a local development server.
 6. Once the build is complete, you can head over to http://localhost:3333.
 
-   > Note: when you run the server for the first time, you'll be asked to authenticate to Sanity.io
+:::note
+When you run the server for the first time, you'll be asked to authenticate to Sanity.io
+:::
 
 You should now see the Sanity Studio running in your browser!
 
@@ -41,9 +43,9 @@ The **"dev"** dataset is currently manually created on a semi-regular basis from
 
 Our **"production"** instance of Sanity Studio is currently deployed to: [https://grief-matters-sanity-studio.netlify.app/](https://grief-matters-sanity-studio.netlify.app/)
 
-> Note: Only authorised users can log in to the Studio
-
-[![Netlify Status](https://api.netlify.com/api/v1/badges/f66273ec-f841-4661-852f-3fa281fbdee4/deploy-status)](https://app.netlify.com/sites/grief-matters-sanity-studio/deploys)
+:::note
+Only authorised users can log in to the Studio
+:::
 
 ### Development
 
@@ -56,4 +58,3 @@ The format for the deployment URL is `https://branch-name--grief-matters-sanity-
 We also have a **"Sandbox"** deployment, deployed via the `sandbox` branch. Presently `main` is semi-regularly merged into the `sandbox` branch, but we hope to have this happen automatically soon!
 
 The deployment for the `sandbox` can be found at [https://grief-matters-sanity-studio.netlify.app](https://grief-matters-sanity-studio.netlify.app)
-
