@@ -1,8 +1,12 @@
 ---
-title: 'Creating Documents'
+title: "Creating Documents"
 sidebar:
-    order: 4
+  order: 4
 ---
+
+:::danger
+Unfortunately the Sandbox is not currently available as we continue our migration to Cloudflare
+:::
 
 To follow along with this guide log in to the **"sandbox"** at [https://sandbox--grief-matters-sanity-studio.netlify.com](https://sandbox--grief-matters-sanity-studio.netlify.com).
 
