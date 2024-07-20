@@ -1,0 +1,13 @@
+name: Documentation
+description: Create an Issue to track adding or amending Documentation.
+title: "DOCS > "
+labels: ["docs"]
+projects: ["grief-matters/1"]
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Describe what needs to be added or changed and why
+    validations:
+      required: true
