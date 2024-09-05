@@ -20,15 +20,23 @@ hero:
   #     icon: right-arrow
 ---
 
-import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
+import { Card, CardGrid, LinkCard } from "@astrojs/starlight/components";
 
 ## Next steps
 
 <CardGrid>
-	<Card title="Content Editors" icon="pencil">
-		<LinkCard href="/content-editing/getting-started/" title="Start Here" description="If you're a Content Editor working on Why Grief Matters you should start here."/> 
-	</Card>
-	<Card title="Developers" icon="laptop">
-		<LinkCard href="/development/getting-started/" title="Start Here" description="If you're a Developer working on the Why Grief Matters CMS or Website you should start here."/> 
-	</Card>
+  <Card title="Content Editors" icon="pencil">
+    <LinkCard
+      href="/content-editors/start-here/01-getting-started"
+      title="Start Here"
+      description="If you're a Content Editor working on Why Grief Matters you should start here."
+    />
+  </Card>
+  <Card title="Developers" icon="laptop">
+    <LinkCard
+      href="/development/getting-started/"
+      title="Start Here"
+      description="If you're a Developer working on the Why Grief Matters CMS or Website you should start here."
+    />
+  </Card>
 </CardGrid>

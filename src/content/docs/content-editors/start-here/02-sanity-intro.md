@@ -1,7 +1,5 @@
 ---
 title: Intro to Sanity
-sidebar:
-    order: 2
 ---
 
 Sanity is a modern headless CMS (Content Management System). Sanity uses structured content to endlessly re-use content across any channel and a composable approach to help businesses connect to any third-party technology, data source, and front end framework.

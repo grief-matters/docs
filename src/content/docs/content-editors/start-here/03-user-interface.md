@@ -1,8 +1,7 @@
 ---
 title: Sanity Interface
-sidebar:
-    order: 3
 ---
+
 The screenshot below shows the Sanity Studio interface:
 
 ![Alt text](@assets/ui-overview.png)

@@ -1,7 +1,5 @@
 ---
 title: Getting Started
-sidebar:
-    order: 1
 ---
 
 This guide will help you get started using the **Why Grief Matters Content Management System (CMS)**. The CMS is an implementation of [Sanity Studio](https://www.sanity.io/studio).
