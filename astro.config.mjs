@@ -29,70 +29,22 @@ export default defineConfig({
         },
         {
           label: "Developers",
-          autogenerate: { directory: "developers" },
+          items: [
+            {
+              label: "Start Here",
+              autogenerate: { directory: "developers/start-here" },
+            },
+            {
+              label: "Sanity CMS",
+              autogenerate: { directory: "developers/sanity-cms" },
+            },
+            {
+              label: "Website",
+              autogenerate: { directory: "developers/website" },
+            },
+          ],
         },
       ],
-      // sidebar: [
-      //   {
-      //     label: "Content Editing",
-      //     items: [
-      //       {
-      //         label: "Getting Started",
-      //         items: [
-      //           {
-      //             label: "Intro to Sanity",
-      //             link: "getting-started/document-search",
-      //           },
-      //         ],
-      //       },
-      //       {
-      //         label: "Intro to Sanity",
-      //         link: "content-editing/sanity-intro",
-      //       },
-      //       {
-      //         label: "Sanity User Interface",
-      //         link: "content-editing/user-interface",
-      //       },
-      //       {
-      //         label: "Images",
-      //         link: "content-editing/images",
-      //       },
-      //       {
-      //         label: "Document Editing",
-      //         items: [
-      //           {
-      //             label: "Creating",
-      //             link: "content-editing/creating-documents",
-      //           },
-      //           {
-      //             label: "Editing",
-      //             link: "content-editing/editing-documents",
-      //           },
-      //           {
-      //             label: "Document States",
-      //             link: "content-editing/document-states",
-      //           },
-      //           {
-      //             label: "Document Actions",
-      //             link: "content-editing/document-actions",
-      //           },
-      //         ],
-      //       },
-      //       {
-      //         label: "Content Types",
-      //         autogenerate: {
-      //           directory: "content-types",
-      //         },
-      //       },
-      //     ],
-      //   },
-      //   {
-      //     label: "Development",
-      //     autogenerate: {
-      //       directory: "development",
-      //     },
-      //   },
-      // ],
     }),
   ],
 });
