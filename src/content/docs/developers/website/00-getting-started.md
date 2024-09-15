@@ -26,9 +26,9 @@ If you're a developer looking to get started on the Grief Matters website. We're
 2. Create a file named `.env` in the root of your project and add to it the following environment variables:
 
    ```json
-   SANITY_STUDIO_PROJECT_ID = "vg3sb730";
-   SANITY_STUDIO_DATASET = "dev";
-   SANITY_STUDIO_API_VERSION = "2023-07-16";
+   SANITY_STUDIO_PROJECT_ID = "vg3sb730"
+   SANITY_STUDIO_DATASET = "production"
+   SANITY_STUDIO_API_VERSION = "2023-07-16"
    ```
 
    :::note
