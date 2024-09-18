@@ -132,21 +132,62 @@ Finally, we create the TypeScript types that we can use throughout our applicati
 export type Population = z.infer<typeof zPopulation>;
 ```
 
-### Defining Functions To Fetch And Validate
+### Defining Functions To Fetch And Validate Data
+
+We keep everything to do with fetching data and validating against our models inside `src/common/client.ts`.
+
+This file contains an instance of a [Sanity client](https://www.sanity.io/docs/js-client)...
+
+```ts
+export const client = createClient({
+  projectId: import.meta.env.SANITY_STUDIO_PROJECT_ID,
+  dataset: import.meta.env.SANITY_STUDIO_DATASET,
+  useCdn: true,
+  apiVersion: import.meta.env.SANITY_STUDIO_API_VERSION,
+});
+```
+
+...and a bunch of functions that return type-safe data that can be imported into our components where needed.
+
+Here's an example that fetches all "populations" (the content type we modelled in [the previous section](#defining-the-data-model)):
+
+```ts
+export async function getPopulations(): Promise<Population[]> {
+  const populations = await client
+    .fetch(gPopulationsQuery)
+    .then((result) => zPopulation.array().parse(result));
+
+  return populations;
+}
+```
+
+There's not a lot to it. We call the client's `fetch` function (`client.fetch(query, params = {})`) using the query that we defined in our model, then using the `parse` function on our Zod schema o validate the result. If the data does not conform to our model, Zod will throw an error.
+
+And it really is that simple.
+
+The `client.fetch` function also accepts a `params` object as a second argument if your query uses [parameters](https://www.sanity.io/docs/groq-parameters). See `getCategoriesByFilter` in the `client` as an example.
+
+:::note
+Most things inside the "client" are Sanity related. If we fetch data from other sources in the future we _might_ want to co-locate that stuff here so we don't need to care what comes from where inside our components. There's also stuff in there that we _might_ want to move elsewhere at some point such as the `imageBuilder`, but for now it's fine.
+:::
+
+### Getting Data In Your Components
+
+[[TODO]]
 
 ## Project Structure
 
-#### Model
+### Model
 
 Files in the **Model** folder collect together the queries, Zod schemas and Types required to build the data models our Astro components need. They serve both the `client` and to provide types to the component.
 
-#### Common
+### Common
 
 A home for everything non-Astro that is shared throughout the project. It contains some important files like the `client` and the `design-system` but also files containing a single helper like `route`.
 
 As a rule fo thumb, if you need a helper across more than 3 components, consider sticking it in here somewhere.
 
-#### Layouts
+### Layouts
 
 The Astro team describe these as:
 
@@ -154,21 +195,23 @@ The Astro team describe these as:
 
 This is pretty much true for our project. **Layouts** is for Astro components responsible for laying out a page, or a section of a page. These won't usually contain anything data related, or much in terms of rendering logic. That should be left to their children. A minimal prop interface is ok if it is necessary to the layout, `ResourcePageLayout` is a good example of this as it uses the `Astro.slots` api to conditionally build the layout.
 
-#### Pages
+### Pages
 
 **Pages** are responsible for handling routing, data loading, and overall page layout for every page in the website. It shouldn't contain anything that doesn't ultimately render at a specific path.
 
 Read more about the concept in the [Astro docs](https://docs.astro.build/en/basics/astro-pages/)
 
-#### Styles
+### Styles
 
 Should not be used for general styling purposes (all of that should be done at a component level using Tailwind). This should be very much for setting up really "base" CSS config stuff, and is unlikely to extend beyond `main.css`
 
-#### UI
+### UI
 
 We follow a relatively "atomic" approach, but it is far from stable. We have `primitives` for the core UI building blocks from which higher level abstractions can be built, but we've not settled into a definite pattern as yet.
 
 ## Design System
+
+[[TODO]]
 
 ## GitHub
 
