@@ -4,7 +4,7 @@ description: Getting started as a contributor on the Why Grief Matters website
 ---
 
 :::tip
-Don't have a GitHub account? Read the [Developer Essentials](../start-here/00-essentials.md) page first
+Don't have a GitHub account? Read the [Developer Essentials](/developers/start-here/00-essentials) page first
 :::
 
 If you're a developer looking to get started on the Grief Matters website. We're happy to have you here. Read on!
